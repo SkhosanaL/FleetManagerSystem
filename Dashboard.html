@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-UA-Compatible" content="ie=Chrome">
+    <title>Main Menu - Fleet Management System</title>
+    <link rel="stylesheet" href="/public/css/Dashbaord.css">
+</head>
+<body>
+    <div class="container">
+        <header id="hearder1">
+            <h1>WELCOME USERNAME TO</h1>
+            <br><br<br>
+            <h2> OWL FLEET MANAGEMENT SYSTEM
+            <div id="datetime" class="datetime"></div></h2>
+        </header>
+        <br>
+        <nav>
+            <ul>
+                <li><button title="open employees form" onclick="viewEmployees()">VIEW EMPLOYEES</button></li>
+                <li><button title="open vehicles form" onclick="viewVehicles()">VIEW VEHICLES</button></li>
+                <li><button title="open drivers form" onclick="viewDrivers()">VIEW DRIVERS</button></li>
+                <li><button title="open trips form" onclick="viewTrips()">VIEW TRIPS</button></li>
+                <li><button title="open maintenance form" onclick="vehicleMaintenance()">VEHICLE MAINTENANCE</button></li>
+                <li><button title="open fuel logs form" onclick="fuelLogs()">FUEL LOGS</button></li>
+                <li><button title="update users" onclick="updateUsers()">UPDATE USERS</button></li>
+                <li><button title="process salaries" onclick="processSalaries()">PROCESS SALARIES</button></li>
+            </ul>
+        </nav>
+        <button class="close-button" onclick="closeForm()">CLOSE FORM</button>
+    </div>
+    <script src="/public/js/dashboard.js"></script>
+</body>
+</html>

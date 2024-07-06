@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-UA-Compatible" content="ie=edge">
+    <title>Employee Information</title>
+    <link rel="stylesheet" href="/public/css/Employee.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>EMPLOYEES INFORMATION</h2>
+            <div class="search-container">
+                <input type="text" id="searchIdentityNumber" placeholder="Enter Identity Number">
+                <button class="button-search" onclick="searchEmployee()">Search</button>
+            </div>
+        </header>
+        <form id="employee-form">
+            <div class="form-group">
+                <label for="employee-number">Employee number:</label>
+                <input type="text" class="form_id_input" id="employee-number" name="employee_number" readonly>
+            </div>
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" class="form_first_name_input" id="first-name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" class="form_last_name_input" id="last-name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="identity-number">Identity number:</label>
+                <input type="text" class="form_identity_input form_input-error" id="identity-number" name="identity_number" placeholder="Enter identity-number" required>
+            </div>
+            <div class="form-group">
+                <label for="date-of-birth">Date of Birth:</label>
+                <input type="date" class="form_dateofBirth_input" id="date-of-birth" name="date_of_birth" required>
+            </div>
+            <div class="form-group">
+                <label for="street-name">Street Name:</label>
+                <input type="text" class="form_streetname_input" id="street-name" name="street_name" required>
+            </div>
+            <div class="form-group">
+                <label for="destination-place">Destination Place:</label>
+                <input type="text" class="form_destination_input" id="destination-place" name="destination_place" placeholder="Enter place of residence." required>
+            </div>
+            <div class="form-group">
+                <label for="city-name">City/Town:</label>
+                <input type="text" class="form_city_name_input" id="city-name" name="city_name" placeholder="Enter city, town or village name" required>
+            </div>
+            <div class="form-group">
+                <label for="postal-code">Postal Code:</label>
+                <input type="text" class="form_postcode_input" id="postal-code" name="postal_code" required>
+            </div>
+            <div class="form-group">
+                <label for="email-address">Email Address:</label>
+                <input type="email" class="form_email_address_input" id="email-address" name="email_address" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile-number">Mobile Number:</label>
+                <input type="text" class="form_mobilenumber_input" id="mobile-number" name="mobile_number" required>
+            </div>
+            <div class="form-group">
+                <label for="job-name">Job name:</label>
+                <input type="text" class="form_jobname_input" id="job-name" name="job_name" placeholder="Enter job name" required>
+            </div>
+            <div class="form-group">
+                <label for="salary-grade">Salary Grade:</label>
+                <input type="text" class="form_salarygrade_input" id="salary-grade" name="salary_grade" required>
+            </div>
+            <div class="form-group">
+                <label for="hired-date">Hired Date:</label>
+                <input type="date" class="form_hiredate_input" id="hired-date" name="hired_date" required>
+            </div>
+            <div class="form-group">
+                <label for="employee-status">Employee Status:</label>
+                <select class="form_select-status_input" id="employee-status" name="employee_status" required>
+                    <option value="Permanent">Permanent</option>
+                    <option value="Contracted">Contracted</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Resignation">Resignation</option>
+                    <option value="Retired">Retired</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="gender-group">
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <button type="button" onclick="navigate('previous')">Previous</button>
+                <button type="button" onclick="navigate('first')">First Record</button>
+                <button type="button" onclick="navigate('last')">Last Record</button>
+                <button type="button" onclick="navigate('next')">Next Record</button>
+                <button type="button" class="delete-button" onclick="deleteRecord()">Delete Record</button>
+                <button type="button" onclick="editRecord()">Edit Record</button>
+                <button type="button"  class="Addnew-button"onclick="addNew()">Add New</button>
+                <button type ="button" class="save-button"onclick="saveRecord()">Save Data</button>
+                <button type="button" class="close-button" onclick="closeForm()">Close Form</button>
+            </div>
+        </form>
+    </div>
+    <script src="/public/js/Employee.js"></script>
+</body>
+</html>

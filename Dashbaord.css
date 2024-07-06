@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  background-image: url(/public/img/csm_continental_pp_fleets_5148ce0d5f.jpg)
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center; /* Center align the content within the container */
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header h1, header h2 {
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.datetime {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+nav ul li button {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff7373;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+nav ul li button:hover {
+  background-color: #ff5252;
+}
+
+.close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 200;
+  font-style: bold;
+  background-color:#a5c916;
+  color: rgb(20, 19, 19);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.close-button:hover {
+  background-color: #ee410c;
+}

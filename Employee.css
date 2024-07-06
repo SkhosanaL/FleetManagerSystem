@@ -1,0 +1,200 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 70%;
+  margin-top: 2px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e0ebeb;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.search-container input[type="text"] {
+  padding: 5px;
+  margin-right: 10px;
+}
+.button-search{
+  background-color: rgb(0, 251, 255);
+  border-radius: 2px solid;
+  cursor: pointer;
+  outline-style: double;
+}
+form {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  
+}
+
+.form-group {
+  display:inline-block;
+  flex-direction: column;
+  align-self: self-start;
+     
+  }
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.form_id_input{
+
+  width: 75px;
+  background-color: aqua;
+  cursor :not-allowed;
+}
+
+.form_first_name_input{
+  width: 250px;
+  max-width: 425px;
+  margin-left:11mm;
+}
+.form_last_name_input{
+  width: 250px;
+  max-width: 425px;
+  margin-left:15mm;
+}
+
+.form_identity_input{
+  width: 250px;
+  max-width: 425px;
+  margin-left:1mm;
+}
+
+.form_dateofBirth_input{
+  margin-left:11mm;
+}
+
+.form_streetname_input{
+  width: 300px;
+  max-width: 425px;
+  margin-left:8mm;
+}
+
+.form_destination_input{
+  width: 290px;
+  max-width: 425px;
+  margin-left:1mm;
+
+}
+
+.form_city_name_input{
+  width: 300px;
+  max-width: 425px;
+  margin-left:13mm;
+}
+.form_postcode_input{
+  width: 65px;
+  margin-left:11mm;
+}
+.form_email_address_input{
+  width: 300px;
+  max-width: 425px;
+  margin-left:4mm;
+}
+
+.form_jobname_input{
+  width: 290px;
+  margin-left:13mm;
+}
+
+.form_mobilenumber_input{
+  margin-left:5mm;
+}
+.form_salarygrade_input{
+  width: 85px;
+  margin-left:9mm;
+
+}
+.form_hiredate_input{
+  margin-left: 12mm;
+}
+
+.form_select-status_input{
+  margin-left:1mm;
+}
+input, select {
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 5px;  
+}
+
+.gender-group {
+  display: flex;
+  align-items: center;
+}
+
+.gender-group input {
+  margin-right: 5px;
+}
+
+.nav-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.nav-buttons button.Addnew-button{
+  font-weight: bold;
+  color: #0c0c0c;
+  background-color: chocolate;
+}
+.nav-buttons button.save-button{
+  font-weight: bold;
+  color: #0c0c0c;
+  background-color:yellowgreen;
+}
+.nav-buttons button.close-button{
+ color: #0c0c0c;
+ background-color: hsl(118, 90%, 47%);
+ font-weight: bold;
+ font-style: normal;
+}
+.nav-buttons button.delete-button{
+  color: #0c0c0c;
+  background-color: hwb(14 4% 1%);
+  font-weight: bold;
+  font-style: normal;
+}
+.nav-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  background-color: #86b8f2;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-color:white;
+}
+
+.nav-buttons button:hover {
+  background-color: #e9ed11;
+}
+
