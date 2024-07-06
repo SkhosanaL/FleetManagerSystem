@@ -1,48 +1,91 @@
-baseURL = `http://127.0.0.1:5500/`;
+const { Sequelize, DataTypes, Op } = require('sequelize');
+const sequelize = require('../config/db.config');
 
-// Employee.js
-
-function addNew() {
-    // Collect data from form fields
-    const employeeData = {
-        employee_number: document.getElementById('employee-number').value,
-        first_name: document.getElementById('first-name').value,
-        last_name: document.getElementById('last-name').value,
-        identity_number: document.getElementById('identity-number').value,
-        date_of_birth: document.getElementById('date-of-birth').value,
-        street_name: document.getElementById('street-name').value,
-        destination_place: document.getElementById('destination-place').value,
-        city_name: document.getElementById('city-name').value,
-        postal_code: document.getElementById('postal-code').value,
-        email_address: document.getElementById('email-address').value,
-        mobile_number: document.getElementById('mobile-number').value,
-        job_name: document.getElementById('job-name').value,
-        salary_grade: document.getElementById('salary-grade').value,
-        hired_date: document.getElementById('hired-date').value,
-        employee_status: document.getElementById('employee-status').value,
-        gender: document.querySelector('input[name="gender"]:checked').value
-    };
-
-    // Send POST request to backend
-    fetch(`${baseURL}/api/employees`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(employeeData),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+const Employee = sequelize.define('Employee', {
+    employee_id: {
+        type: DataTypes.STRING,
+        primaryKey: true,
+        allowNull: false,
+        unique: true
+    },
+    first_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    last_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    identity_number: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    date_of_birth: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    gender: {
+        type: DataTypes.ENUM('Male', 'Female'),
+        allowNull: false
+    },
+    street_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    destination_place: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    city_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    postal_code: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email_address: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    mobile_number: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    job_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    salary_grade: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    hired_date: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    status: {
+        type: DataTypes.ENUM('Permanent', 'Contracted', 'Internship', 'Resignation', 'Retired'),
+        allowNull: false
+    }
+}, {
+    timestamps: false,
+    tableName: 'Employees', // Make sure this matches your actual table name
+    // Define a method to call the stored procedure for generating employee_id
+    generateEmployeeId: async function() {
+        try {
+            const [result, metadata] = await sequelize.query('CALL generate_unique_id_employee();');
+            if (result && result.length > 0 && result[0][0]) {
+                return result[0][0].employee_id;
+            }
+            throw new Error('Unable to generate employee_id');
+        } catch (error) {
+            console.error('Error generating employee_id:', error);
+            throw error;
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Employee added successfully:', data);
-        // Optionally, you can clear the form or show a success message here
-    })
-    .catch(error => {
-        console.error('Error adding employee:', error);
-        // Handle errors here
-    });
-}
+    }
+});
+
+module.exports = Employee;
